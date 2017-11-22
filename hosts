@@ -1,0 +1,24 @@
+ansible-node ansible_ssh_host=<Ansible node private IP >
+masternode ansible_ssh_host=<Master-node node private IP >
+workernode0 ansible_ssh_host=<Worker-node node private IP >
+workernode1 ansible_ssh_host=<Worker-node node private IP >
+workernode2 ansible_ssh_host=<Worker-node node private IP >
+workernode3 ansible_ssh_host=<Worker-node node private IP >
+
+[configNode]
+ansible-node ansible_connection=local ansible_user=ubuntu
+
+[master]
+masternode ansible_connection=ssh ansible_user=ubuntu
+
+[master:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[workers]
+workernode0 ansible_connection=ssh ansible_user=ubuntu
+workernode1 ansible_connection=ssh ansible_user=ubuntu
+workernode2 ansible_connection=ssh ansible_user=ubuntu
+workernode3 ansible_connection=ssh ansible_user=ubuntu
+
+[workers:vars]
+ansible_python_interpreter=/usr/bin/python3
