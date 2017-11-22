@@ -95,7 +95,7 @@
       version: CI_v0_r0
       force: yes
 
-  - name: "Setup worker IPs"
+  - name: "Setup worker IPs and ports"
     copy: 
       content: |
               { "node_name": "PE Worker", 
@@ -111,7 +111,7 @@
     with_items:
       - "{{ groups['master'] }}"
 
-  - name: "Setup master IPs"
+  - name: "Setup master IPs and ports"
     copy: 
       content: |
               { "node_name": "PE Master", 
