@@ -1,0 +1,26 @@
+ 
+- hosts: master
+
+  tasks:
+
+  - name: "Run Master"
+    command: screen -S H-Master -dm ./runMaster.sh
+    args:
+      chdir: /home/ubuntu/HarmonicIO/
+    become_user: ubuntu
+
+
+
+- hosts: workers
+
+  tasks: 
+
+  - name: "Run Worker"
+    command: screen -S H-Worker -dm ./runWorker.sh
+    args:
+      chdir: /home/ubuntu/HarmonicIO/
+    become: yes
+
+
+
+

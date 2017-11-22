@@ -1,0 +1,24 @@
+ 
+- hosts: master
+
+  tasks:
+
+  - name: "Run Master"
+    command: screen -X -S H-Master quit
+    become_user: ubuntu
+    ignore_errors: yes
+
+
+
+- hosts: workers
+
+  tasks: 
+
+  - name: "Run Worker"
+    command: screen -X -S H-Worker quit
+    become: yes
+    ignore_errors: yes
+
+
+
+
