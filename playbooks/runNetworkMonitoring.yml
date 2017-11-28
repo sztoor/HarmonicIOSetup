@@ -1,0 +1,24 @@
+ 
+- hosts: master:workers
+
+  tasks:
+
+  - name: "Install ifstat"
+    apt:
+      name: ifstat
+    become: yes
+
+  - name: "Copy Network Monitoring script"
+    copy:
+      src: network_status.sh
+      dest: /home/ubuntu/
+      mode: 0755
+
+  - name: "Run Network Monitoring script"
+    command: screen -S H-Monitoring -dm ./network_status.sh
+    args:
+      chdir: /home/ubuntu/
+    become_user: ubuntu
+
+
+
