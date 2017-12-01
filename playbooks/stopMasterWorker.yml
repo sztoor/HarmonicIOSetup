@@ -3,7 +3,7 @@
 
   tasks:
 
-  - name: "Run Master"
+  - name: "Stop Master"
     command: screen -X -S H-Master quit
     become_user: ubuntu
     ignore_errors: yes
@@ -14,7 +14,7 @@
 
   tasks: 
 
-  - name: "Run Worker"
+  - name: "Stop Workers"
     command: screen -X -S H-Worker quit
     become: yes
     ignore_errors: yes
