@@ -92,7 +92,7 @@
     git:
       repo: https://github.com/beirbear/HarmonicIO.git
       dest: /home/ubuntu/HarmonicIO
-      version: CI_v0_r0
+      version: CI_v0_r1
       force: yes
 
   - name: "Setup worker IPs and ports"
@@ -145,7 +145,7 @@
     git:
       repo: https://github.com/beirbear/HarmonicPE.git
       dest: /home/ubuntu/HarmonicPE
-      version: CI_v0_r0
+      version: CI_v0_r1
 
 
   # - name: "Run Worker"
